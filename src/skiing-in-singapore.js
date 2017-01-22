@@ -1,12 +1,17 @@
 // Sample Grid of size 4x4
 
-var arr = [[2,1,2,1],[2,7,3,8],[4,1,3,3],[5,8,9,3]];
+//var arr = [[2,1,2,1],[2,7,3,8],[4,1,3,3],[5,8,9,3]];
+var arr = [[4,8,7,3],[2,5,9,3],[6,3,2,5],[4,4,1,6]];
 //4,4
 //2,1,2,1
 //2,7,3,8
 //4,1,3,3
 //5,8,9,3
 
+//4 8 7 3 
+//2 5 9 3 
+//6 3 2 5 
+//4 4 1 6
 // dimensions
 var WIDTH = arr.length;
 var HEIGHT = arr[0].length;
@@ -171,7 +176,7 @@ function getHighest() {
 		if(height > heighest.height) {
 			heighest = curr;
 		} else if(height === heighest.height) {
-			if((curr.value - curr.endPoint) > (height.value - heighest.endPoint)) {
+			if((curr.value - curr.endPoint) > (heighest.value - heighest.endPoint)) {
 				heighest = curr;
 			}
 		}
