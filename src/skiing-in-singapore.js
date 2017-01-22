@@ -108,21 +108,22 @@ Tree.prototype.getHeight = function (node) {
 		var sDepth = node.getHeight(node.sChild);
 
 		//console.log(eDepth, wDepth, nDepth, sDepth);
-		var min = [node.value];
-		if(node.eChild && node.eChild.value < node.value) {
-			min.push(node.eChild.value);
-		}
 
-		if(node.wChild && node.wChild.value < node.value) {
-			min.push(node.wChild.value);
-		}
-		if(node.nChild && node.nChild.value < node.value) {
-			min.push(node.nChild.value);
-		}
-		if(node.sChild && node.sChild.value < node.value) {
-			min.push(node.sChild.value);
-		}
 		if(node && !node.hasChild) {
+			var min = [node.value];
+			if(node.eChild && node.eChild.value < node.value) {
+				min.push(node.eChild.value);
+			}
+
+			if(node.wChild && node.wChild.value < node.value) {
+				min.push(node.wChild.value);
+			}
+			if(node.nChild && node.nChild.value < node.value) {
+				min.push(node.nChild.value);
+			}
+			if(node.sChild && node.sChild.value < node.value) {
+				min.push(node.sChild.value);
+			}
 			node.getRoot().endPoint = Math.min.apply(null, min);
 		}
 		return Math.max(eDepth, wDepth, nDepth, sDepth) + 1;
